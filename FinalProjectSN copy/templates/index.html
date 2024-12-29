@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="text-center mb-4">
+        <h2>Welcome to the app, {{ user.name }}!</h2>
+    </div>
+    <div class="card shadow-sm p-4">
+        <h3>Chat</h3>
+        <div class="mb-3" style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+            {% for message in messages %}
+                <p>
+                    <strong>
+                        {{ message.author }}
+                        {% if message.authors_country in countries_data %}
+                            <img src="{{ countries_data[message.authors_country]['flag_url'] }}" 
+                                 alt="{{ message.authors_country }} flag" 
+                                 style="width: 20px; height: auto; vertical-align: middle;">
+                        {% endif %}
+                        ({{ message.authors_country }})
+                    </strong>: 
+                    {{ message.message }}
+                </p>
+            {% endfor %}
+        </div>
+        <form method="POST" action="/add-message" class="d-flex">
+            <input type="text" name="text" class="form-control me-2" placeholder="Enter your message" required>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <div class="mt-3 text-end">
+            <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+{% endblock %}

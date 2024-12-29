@@ -1,0 +1,14 @@
+{
+    "Croatia": {
+        "flag_url": "/static/img/croatia.png"
+    },
+    "Germany": {
+        "flag_url": "/static/img/germany.png"
+    },
+    "France": {
+        "flag_url": "/static/img/france.png"
+    },
+    "Italy": {
+        "flag_url": "/static/img/italy.png"
+    }
+}

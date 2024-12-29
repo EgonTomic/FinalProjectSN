@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="card shadow-sm p-4 mx-auto" style="max-width: 400px;">
+        <h3 class="text-center mb-4">Delete your profile</h3>
+        <form method="post" class="text-center">
+            <p>Do you really want to delete your profile?</p>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-danger me-2">Yes</button>
+                <a href="/profile" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
